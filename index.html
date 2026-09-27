@@ -5,39 +5,18 @@
     <title></title>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const star = document.querySelector('h1')
-            star.style.position = 'absolute'
-
-            let [x, y] = [0, 0]
-            const block = 20
-
-            const print = () => {
-                star.style.left = `${x * block}px`
-                star.style.top = `${y * block}px`
+            const listener = (event) => {
+                const length = event.currentTarget.value.length
+                h2.textContent = `글자 수: ${length}`
             }
-            print()
-
-            document.body.addEventListener('keydown', (event) => {
-                switch (event.key) {
-                    case 'ArrowDown':
-                        y += 1
-                        break
-                    case 'ArrowUp':
-                        y -= 1
-                        break
-                    case 'ArrowLeft':
-                        x -= 1
-                        break
-                    case 'ArrowRight':
-                        x += 1
-                        break
-                }
-                print()
-            })
+            const h2 = document.querySelector('h2')
+            const textarea = document.querySelector('textarea')
+            textarea.addEventListener('keyup', listener)
         })
     </script>
 </head>
 <body>
-    <h1>⭐️</h1>
+    <h2></h2>
+    <textarea>hong</textarea>
 </body>
 </html>
