@@ -5,8 +5,8 @@
     <title></title>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const listener = (event) => {
-                const length = event.currentTarget.value.length
+            const listener = function () {
+                const length = this.value.length
                 h2.textContent = `글자 수: ${length}`
             }
             const h2 = document.querySelector('h2')
